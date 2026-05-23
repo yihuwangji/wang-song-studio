@@ -64,6 +64,8 @@ const translations = {
     contactTitle: "商务合作，或想做一个真正有人用的产品？",
     contactCopy: "欢迎联系老王跟小宋工作室。我们可以从商家推广、平台合作、社区项目或一个本地服务场景开始，把想法推进到可上线、可运营的产品。",
     wechatLabel: "微信 WeChat",
+    wechatHint: "点击微信号会复制微信号，并尝试打开微信。",
+    wechatCopied: "已复制微信号 esvida168，正在尝试打开微信。",
     mobileProduct: "产品",
     mobileBusiness: "合作",
     mobileContact: "联系"
@@ -133,6 +135,8 @@ const translations = {
     contactTitle: "Business partnership or a product people will actually use?",
     contactCopy: "Contact Wang & Song Studio. We can start from merchant promotion, platform cooperation, community projects or a local service scenario.",
     wechatLabel: "WeChat",
+    wechatHint: "Tap the WeChat ID to copy it and try opening WeChat.",
+    wechatCopied: "WeChat ID esvida168 copied. Trying to open WeChat.",
     mobileProduct: "Product",
     mobileBusiness: "Partner",
     mobileContact: "Contact"
@@ -202,6 +206,8 @@ const translations = {
     contactTitle: "¿Colaboración comercial o un producto que la gente use de verdad?",
     contactCopy: "Contacta con Wang & Song Studio. Podemos empezar desde promoción para comercios, cooperación de plataforma, proyectos comunitarios o un servicio local.",
     wechatLabel: "WeChat",
+    wechatHint: "Toca el ID de WeChat para copiarlo e intentar abrir WeChat.",
+    wechatCopied: "ID de WeChat esvida168 copiado. Intentando abrir WeChat.",
     mobileProduct: "Producto",
     mobileBusiness: "Colaborar",
     mobileContact: "Contacto"
@@ -236,6 +242,29 @@ function applyLanguage(lang) {
 
 document.querySelectorAll("[data-lang]").forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+});
+
+document.querySelectorAll("[data-wechat-id]").forEach((link) => {
+  link.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const wechatId = link.dataset.wechatId;
+    const lang = localStorage.getItem("studioLanguage") || "zh";
+    const dictionary = translations[lang] || translations.zh;
+    const hint = document.getElementById("wechatHint");
+
+    try {
+      await navigator.clipboard.writeText(wechatId);
+    } catch (error) {
+      // Clipboard access can be blocked in some mobile browsers; still try to open WeChat.
+    }
+
+    if (hint) {
+      hint.textContent = dictionary.wechatCopied;
+    }
+
+    window.location.href = "weixin://";
+  });
 });
 
 applyLanguage(localStorage.getItem("studioLanguage") || "zh");
