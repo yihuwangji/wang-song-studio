@@ -499,7 +499,7 @@ nav a,
 }
 
 .business-grid p,
-business-note p {
+.business-note p {
   color: var(--muted);
 }
 
@@ -583,6 +583,13 @@ business-note p {
   color: var(--blue);
 }
 
+.wechat-link {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
 .contact-methods {
   display: grid;
   gap: 12px;
@@ -599,6 +606,14 @@ business-note p {
 
 .contact-methods strong {
   color: var(--accent-dark);
+}
+
+.wechat-hint {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .mobile-actionbar {
