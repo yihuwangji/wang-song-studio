@@ -332,6 +332,90 @@ nav a,
   border-top: 1px solid var(--line);
 }
 
+.screen-product {
+  background:
+    linear-gradient(135deg, rgba(54, 91, 116, 0.11), rgba(178, 71, 46, 0.08)),
+    var(--paper-deep);
+}
+
+.screen-layout {
+  display: grid;
+  gap: 34px;
+}
+
+.screen-product .section-heading p:last-child {
+  max-width: 820px;
+  color: var(--muted);
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+
+.screen-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.screen-card {
+  display: grid;
+  min-height: 320px;
+  align-content: space-between;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 18px 44px rgba(42, 35, 27, 0.08);
+}
+
+.screen-card span {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 6px 11px;
+  background: var(--paper);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.screen-card h3 {
+  margin: 34px 0 14px;
+  font-size: clamp(28px, 3.8vw, 48px);
+}
+
+.screen-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.screen-card.is-tv {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.screen-card.is-tv p {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.screen-card.is-tv span {
+  background: rgba(255, 253, 248, 0.12);
+  color: #f1cdb8;
+}
+
+.screen-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.secondary-link {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.secondary-link:hover {
+  background: var(--blue);
+}
+
 .download {
   background: var(--white);
 }
@@ -722,6 +806,10 @@ nav a,
   }
 
   .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screen-showcase {
     grid-template-columns: 1fr;
   }
 
