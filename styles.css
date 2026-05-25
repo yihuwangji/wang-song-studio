@@ -820,6 +820,197 @@ nav a,
   display: none;
 }
 
+.product-detail-page {
+  background: var(--white);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.detail-header nav a {
+  color: var(--ink);
+}
+
+.dark-brand {
+  color: var(--ink);
+}
+
+.detail-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(28px, 6vw, 84px);
+  align-items: center;
+  min-height: 76svh;
+  padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 72px);
+  background: var(--paper);
+}
+
+.detail-hero h1 {
+  color: var(--ink);
+}
+
+.detail-lead {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: clamp(18px, 2.2vw, 24px);
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.dark-button {
+  background: var(--ink) !important;
+  color: var(--white) !important;
+}
+
+.dark-outline {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.device-demo {
+  position: relative;
+  min-height: 500px;
+}
+
+.phone-demo,
+.tv-demo {
+  position: absolute;
+  display: grid;
+  align-content: end;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.phone-demo {
+  z-index: 2;
+  left: 0;
+  bottom: 40px;
+  width: min(260px, 46vw);
+  min-height: 460px;
+  border-radius: 34px;
+  padding: 28px;
+  background: var(--white);
+}
+
+.tv-demo {
+  right: 0;
+  top: 10px;
+  width: min(520px, 70vw);
+  min-height: 320px;
+  border-radius: 18px;
+  padding: 34px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.phone-demo span,
+.tv-demo span {
+  margin-bottom: 16px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tv-demo span {
+  color: #f1cdb8;
+}
+
+.phone-demo strong,
+.tv-demo strong {
+  font-size: clamp(32px, 5vw, 62px);
+  line-height: 1;
+}
+
+.phone-demo p,
+.tv-demo p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.tv-demo p {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.detail-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 86px 0;
+}
+
+.detail-grid,
+.pricing-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.detail-grid article,
+.pricing-strip article {
+  min-height: 260px;
+  padding: 26px;
+  background: var(--white);
+}
+
+.detail-grid span {
+  display: inline-block;
+  margin-bottom: 48px;
+  color: var(--accent-dark);
+  font-weight: 900;
+}
+
+.detail-grid p,
+.pricing-strip p,
+.contact-lite p {
+  color: var(--muted);
+}
+
+.dark-detail {
+  width: 100%;
+  max-width: none;
+  padding: 86px max(20px, calc((100vw - 1180px) / 2));
+  background: var(--ink);
+  color: var(--white);
+}
+
+.dark-detail .section-kicker {
+  color: #f1cdb8;
+}
+
+.pricing-strip article {
+  background: rgba(255, 253, 248, 0.08);
+}
+
+.pricing-strip strong {
+  display: block;
+  margin: 12px 0;
+  color: #f1cdb8;
+  font-size: 28px;
+}
+
+.pricing-strip p {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.contact-lite {
+  border-top: 1px solid var(--line);
+}
+
 @media (max-width: 900px) {
   .site-header {
     padding: 18px 20px;
@@ -846,6 +1037,7 @@ nav a,
   }
 
   .split,
+  .detail-hero,
   .process-layout,
   .work-row,
   .product-case {
@@ -870,6 +1062,15 @@ nav a,
 
   .ai-grid {
     grid-template-columns: 1fr;
+  }
+
+  .detail-grid,
+  .pricing-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .device-demo {
+    min-height: 560px;
   }
 
   .service-item {
@@ -932,6 +1133,36 @@ nav a,
 
   .service-grid {
     grid-template-columns: 1fr;
+  }
+
+  .detail-header nav {
+    display: none;
+  }
+
+  .detail-grid,
+  .pricing-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .device-demo {
+    min-height: 520px;
+  }
+
+  .phone-demo,
+  .tv-demo {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+  }
+
+  .phone-demo {
+    bottom: auto;
+    margin-top: 20px;
+  }
+
+  .tv-demo {
+    top: auto;
+    margin-top: -30px;
   }
 
   .work-row {
