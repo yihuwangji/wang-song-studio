@@ -1,6 +1,6 @@
 const translations = {
   zh: {
-    brand: "老王跟小宋工作室",
+    brand: "欧桥开放平台",
     navServices: "平台",
     navAI: "AI",
     navEuropeAccount: "开放",
@@ -85,7 +85,7 @@ const translations = {
     mobileContact: "联系"
   },
   en: {
-    brand: "Wang & Song Studio",
+    brand: "EuroBridge Open Platform",
     navServices: "Platform",
     navAI: "AI",
     navEuropeAccount: "Open",
@@ -170,7 +170,7 @@ const translations = {
     mobileContact: "Contact"
   },
   es: {
-    brand: "Wang & Song Studio",
+    brand: "EuroBridge Plataforma Abierta",
     navServices: "Plataforma",
     navAI: "IA",
     navEuropeAccount: "Abierta",
